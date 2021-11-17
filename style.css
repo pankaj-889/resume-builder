@@ -1,0 +1,22 @@
+body{
+    background-color: #FEF5E7;
+}
+textarea { /*used for remove slider in textarea*/
+    overflow: hidden;
+  }
+
+#cvtemplate{
+    display: none;
+}
+.myimg{
+    border-radius: 50%;
+    width: 200px;
+}
+.backdeco{
+    background-color: deepskyblue;
+
+}
+.card-header{
+    height: 45px;
+    font-size: 20px;
+}

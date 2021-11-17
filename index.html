@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Resume Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> <!--CSS Bootstarp-->
+    <link rel="stylesheet" href="style.css"
+    
+</head>
+<body>
+    
+    <div class="container" id="cvform">
+        <h1 class="text-center my-3">Resume Generator</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+               <!--first coloumn-->
+               <h3>Personal Information</h3>
+               <div class="form-group">
+                   <label for="namefield">Name</label>
+                   <input type="text" class="form-control" id="namefield" placeholder="Enter Name">
+               </div>
+
+               <div class="form-group my-2">
+                   <label for="emailaddressfield">Email Address</label>
+                   <input type="email" class="form-control" id="emailaddressfield"placeholder="Enter email">
+               </div>
+
+               <div class="form-group  my-2 ">
+                <label for="numberfield">Contact Number</label>
+                <input type="email" class="form-control" id="numberfield"placeholder="Enter contact number">
+               </div>
+
+               <div class="form-group  my-2 ">
+                <label for="addressfield">Your Address</label>
+                <textarea type="text" class="form-control" id="addressfield"placeholder="Enter address here"></textarea>
+               </div>
+
+              <div class="form-group ">
+                <label for="LinkedInfield">LinkedIn</label>
+                <input type="text" class="form-control" id="LinkedInfield" placeholder="Enter here">
+              </div>
+
+              <div class="form-group ">
+                <label for="Githubfield">Github</label>
+                <input type="text" class="form-control" id="Githubfield" placeholder="Enter here">
+              </div>
+              
+              <div class="form-group  my-2 " id="add1">
+                <label for="certificationfield">Certification</label>
+                <input type="text" class="form-control certify" id="certificationfield">
+                <!-- adding textarea -->
+                <div class="container text-center mt-3" id="webtn1">
+                    <button onclick="addcerti()" class="btn btn-dark btn-sm ">Add</button>
+                </div>
+               </div>
+               
+
+            </div>
+
+            <div class="col-md-6 my-5">
+               <!--second coloumn-->
+               <div class="form-group">
+                <label for="objectivesfield">Objectives</label>
+                <textarea type="text" class="form-control" id="objectivesfield" placeholder="Enter here"></textarea>
+            </div>
+
+             <div class="form-group my-2">
+                <label for="techfield">Technical Skills</label>
+                <input type="text" class="form-control" id="techfield" placeholder="Enter here">
+            </div>
+            
+            <div class="form-group my-2" id="add2">
+                <label for="projectfield">Projects</label>
+                <input type="text" class="form-control allprojects" id="projectfield">
+                <!-- adding textarea -->
+                <div class="container text-center mt-3" id="webtn2">
+                    <button onclick="addproject()" class="btn btn-dark btn-sm ">Add</button>
+                </div>
+            </div>
+
+            <div class="form-group my-2" id="add3">
+                <label for="quafield">Academic Qualification</label>
+                <input type="text" class="form-control academic" id="quafield">
+                 <!-- adding textarea -->
+                <div class="container text-center mt-3" id="webtn3">
+                    <button onclick="addquali()" class="btn btn-dark btn-sm ">Add</button>
+                </div>
+            </div>
+
+            
+
+            <div class="form-group my-2">
+               <p id="languagefield">Language</p>
+            </div>
+             
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">Hindi</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">English</label>
+              </div>
+
+            <div class="form-group my-4">
+                <label for="photofield">Choose your Photo</label>
+                <input type="file" class="form-control-file" id="photofield">
+            </div>
+
+            <button onclick="generateCV()" type="submit" class="btn btn-dark">Generate CV</button>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- cv template -->
+
+    <div class="container" id="cvtemplate">
+        
+        <div class="row"> <!--makegrid-->
+            <div class="col-md-4 text-center py-1 backdeco">
+                <!-- first coluum -->
+                <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg"
+                 alt=""
+                 class="img-fluid myimg"
+                >
+                <div class="container">
+                    <p id="namet1">Name</p>
+                    <p id="emailt">Email : </p>
+                    <p id="contactt">Contact number</p>
+                    <p id="addresst">Address</p>
+
+                    <hr>
+
+                    <p id="linkedt"><a href="#1">https://www.linkedin.com/in/pankaj-kumar-b72399190/</a></p>
+                    <p id="gitt"><a href="#1">https://github.com/pankaj-889</a></p>
+                </div>
+
+            </div>
+
+            <div class="col-md-8">
+                <!-- second column -->
+                <h1 class="text-center" style="font-weight: 700" id="namet2">Name</h1>
+                <!-- Objective -->
+                <div class="card  mt-4">
+                    <div class="card-header backdeco">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body ">
+                        <p id="objectivet">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit debitis beatae magni modi? Doloremque voluptates quae fuga enim adipisci, nemo repellat eum natus dignissimos nam minima nostrum cum eos dolorem porro? Accusantium tempore labore consequuntur maxime ullam recusandae accusamus neque omnis ut corporis culpa, voluptas, voluptatibus vel deserunt cumque quos.</p>
+                    </div>
+                </div>
+                <!-- Certification -->
+                <div class="card  mt-4">
+                    <div class="card-header backdeco">
+                        <h3>Certification</h3>
+                    </div>
+                    <div class="card-body ">
+                       <ul id="certificatt">
+                           <li>google</li>
+                           <li>bootcamp</li>
+                           <li>hackathon</li>
+                       </ul>
+                    </div>
+                </div>
+                <!-- Projects -->
+                <div class="card  mt-4">
+                    <div class="card-header backdeco">
+                        <h3>Projects</h3>
+                    </div>
+                    <div class="card-body ">
+                         <ul id="projectt">
+                             <li>proect 1 </li>
+                             <li>proect 2 </li>
+                             <li>proect 3 </li>
+                         </ul>
+                    </div>
+                </div>
+                <!-- Technical -->
+                <div class="card  mt-4">
+                    <div class="card-header backdeco">
+                        <h3>Technical Skills</h3>
+                    </div>
+                    <div class="card-body ">
+                        <p id="languaget1">Language : </p>
+                        <ul><li id="languaget2">C++</li></ul>
+                        <p id="datat1">Database : </p>
+                        <ul id="datat2">
+                            <li>MongoDB</li>
+                            <li>MySQL</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Academic -->
+                <div class="card  mt-4">
+                    <div class="card-header backdeco">
+                        <h3>Academic Qualification</h3>
+                    </div>
+                    <div class="card-body ">
+                        <ul id="schoolt">
+                            <li>Secondary School : </li>
+                            <li>Higher Secondary School : </li>
+                            <li>College : </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Language -->
+                <div class="card  mt-4">
+                    <div class="card-header backdeco">
+                        <h3>Language</h3>
+                    </div>
+                    <div class="card-body ">
+                        <ul id="languaget3">
+                            <li><p>English</p></li>
+                            <li><p>Hindi</p></li>
+                          </ul>  
+                    </div>
+                </div>
+
+                <div class="container mt-3 text-conter">
+                    <button onclick="printCV()" class="btn backdeco">Print CV</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>  <!--JS Bootstarp-->
+    <script src="script.js"></script>
+</body>
+</html>
